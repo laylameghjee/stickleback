@@ -54,26 +54,34 @@ pca_ocean$Region <- factor(
 #saving grouped pca scores for later 
 write.table(pca_ocean, file = file.path( OUTDIR, "pca_scores_4region.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
 
+#adding region counts to output file
+print(table ( pca_ocean$Region, useNA = "ifany"))
+
 #plotting 
 pca_region_plot <- ggplot(
         data = pca_ocean,
         aes( x= PC1, y = PC2, colour = Region) ) +
         geom_point( size = 2, alpha = 0.8) +
         scale_colour_manual(values = c(
-	"West Atlantic" = "#2768F5", 
-        "East Atlantic" = "#27E4F5",
-	"East Pacific" = "#FFB8FB",
-        "West Pacific" = "#FC23F1")) +          
+	"West Atlantic" = "#dodgerblue", 
+        "East Atlantic" = "#cadetblue2",
+	"East Pacific" = "red4",
+        "West Pacific" = "firebrick1")) +          
 	labs(
-        title = "PCA of chromosome I inversion region separated by ocean region",
+        title = "Basic PCA of ChrI Candidate Region, \n Separated by Ocean and Directional Regions, PC1 v PC2",
         x = "PC1",
         y = "PC2",
-        colour = "Ocean Region")
+        colour = "Ocean Region") +
+        theme_classic(base_size = 14) +
+        theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 12.5, lineheight = 1.1),
+                axis.title = element_text( size = 13),
+                axis.text = element_text( size = 11))
+
 
 #saving plot
 ggsave(filename = file.path(
         outdir, "pca_4region.png"),
         plot = pca_region_plot,
-        width = 10,
-        height = 7,
-        dpi = 300)
+        width = 8,
+        height = 6,
+        dpi = 600)

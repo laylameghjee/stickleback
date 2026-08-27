@@ -50,18 +50,23 @@ pca_plot <- ggplot(
 	y = PC2 ) ) +
 	geom_point(
 	size =2,
-	alpha = 0.7 ) +
+	alpha = 0.4,
+	colour = "cadetblue2") +
 	labs ( 
-	title = "PCA of chromosome I inversion region",
+	title = " Basic PCA of ChrI Candidate Region, PC1 v PC2",
 	x = "PC1",
-	y = "PC2" ) 
+	y = "PC2" ) +
+	theme_classic(base_size = 14) +
+	theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 15),
+		axis.title = element_text( size = 13),
+		axis.text = element_text( size = 11))
 
 #saving 
 ggsave(
 	filename = file.path(OUTDIR,"basic_pca.png"), 
 	plot = pca_plot,
-	width = 8,
+	width = 7,
 	height = 6,
-	dpi = 300 ) 
+	dpi = 600 ) 
 
 

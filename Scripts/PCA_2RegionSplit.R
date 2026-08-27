@@ -56,18 +56,24 @@ write.table(pca_ocean,file = file.path( OUTDIR, "pca_scores_2region.txt"),sep = 
 pca_ocean_plot <- ggplot(
 	data = pca_ocean,
 	aes( x= PC1, y = PC2, colour = Ocean) ) +
-	geom_point( size = 2, alpha = 0.8) +
-	scale_colour_manual(values = c("Atlantic" = "#2768F5", "Pacific" = "#FCB5FF")) +
+	geom_point( size = 2, alpha = 0.4) +
+	scale_colour_manual(values = c("Atlantic" = "cadetblue2", "Pacific" = "firebrick1")) +
 	labs(
-	title = "PCA of chromosome I inversion region separated by ocean region",
+	title = "Basic PCA of ChrI Candidate Region, \n Separated by Ocean Region, PC1 v PC2",
 	x = "PC1",
 	y = "PC2",
-	colour = "Ocean")
+	colour = "Ocean") +
+	theme_classic(base_size = 14) +
+	theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 12.5, lineheight = 1.1),
+		axis.title = element_text( size = 13),
+		axis.text = element_text( size = 11))
+
+
 
 #saving plot
 ggsave(filename = file.path(
 	outdir, "pca_2region.png"),
 	plot = pca_ocean_plot,
-	width = 10,
-	height = 7,
-	dpi = 300) 
+	width = 8,
+	height = 6,
+	dpi = 600) 
