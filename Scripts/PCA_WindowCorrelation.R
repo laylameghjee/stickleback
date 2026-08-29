@@ -48,12 +48,15 @@ write.table( cor_results, "slidingpc1_correlation.txt", sep = "\t",
 
 #plotting absolute correlation across inversion
 cor_plot <- ggplot( cor_results, aes(x = Position, y = Absolute_Correlation)) +
-	geom_line() +
-	geom_point()+
-	labs( title = "Similarity of local PC1 across chromosome I inversion",
-		x = "Chromosome I position (Mb)", 
-		y = "Absolute correlation with whole-inversion PC1") +
-	theme_minimal()
+	geom_line( colour = "firebrick1", linewidth = 0.9) +
+	geom_point(colour = "firebrick1", size =2)+
+	labs( title = "Similarity of Local PC1 Scores across thhe ChrI Candidate Region",
+		x = "Chromosome I Position (Mb)", 
+		y = "Absolute Correlation with Whole Region PC1") +
+	theme_classic(base_size = 14) +
+	theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 12.5),
+		axis.title = element_text( size = 13),
+		axis.text = element_text( size = 11))
 
 #saving plot
 ggsave("slidingpc1_corr.png", cor_plot, width = 8, height = 6, dpi = 300)

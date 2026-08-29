@@ -37,22 +37,26 @@ sliding <- sliding %>%
 heatmap_scaled <- ggplot(sliding,
         aes( x = Position, y = Individual, fill = PC1_scaled) ) +
         geom_tile() + scale_fill_gradient2(
-        low = "blue",
+        low = "cadetblue2",
         mid = "white",
-        high = "red",
+        high = "firebrick1",
         midpoint = 0 ) +
-        labs ( title = "Standardised Sliding PCA across chromosome I Inversion",
-                x = "Chromosome I position (Mb)",
+        labs ( title = "Standardised Sliding PCA (PC1) across CHrI Candidate Region, \n Individuals Ungrouped",
+                x = "Chromosome I Position (Mb)",
                 y = "Individual",
                 fill = "Standardised PC1") +
-        theme_minimal() +
-        theme ( panel.grid = element_blank(),
-                axis.text.y = element_text(size = 2),
-                axis.ticks.y = element_blank() )
+        theme_classic(base_size = 14) +
+        theme ( plot.title = element_text( hjust = 0.5, face = "bold", size = 12.5, linehight = 1.1),
+                axis.title(element_text(size = 13),
+                axis.text.x = element_text(size =11),
+                axis.text.y = element_blank(),
+                axis.ticks.y = element_blank(),
+                legend.title = element_text(size = 12),
+                legend.text = element_text(size = 11) )
 
 #saving heatmap
 ggsave("sliding_PCA_heatmap_standardised.png",
         heatmap_scaled,
         width = 10,
         height = 20,
-        dpi = 300)
+        dpi = 600)
