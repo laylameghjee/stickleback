@@ -43,7 +43,6 @@ pca_ocean <- pca_scores %>%
         inner_join(
         meta_loc,
         by = c("Individual" = "sampleID") )
-cat("pca scores and metadata merged\n")
 
 #setting legend order
 pca_ocean$Region <- factor(
@@ -63,8 +62,8 @@ pca_region_plot <- ggplot(
         aes( x= PC1, y = PC2, colour = Region) ) +
         geom_point( size = 2, alpha = 0.8) +
         scale_colour_manual(values = c(
-	"West Atlantic" = "#dodgerblue", 
-        "East Atlantic" = "#cadetblue2",
+	"West Atlantic" = "dodgerblue", 
+        "East Atlantic" = "cadetblue2",
 	"East Pacific" = "red4",
         "West Pacific" = "firebrick1")) +          
 	labs(

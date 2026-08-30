@@ -52,7 +52,7 @@ cor_plot <- ggplot( cor_results, aes(x = Position, y = Absolute_Correlation)) +
 	geom_point(colour = "firebrick1", size =2)+
 	labs( title = "Similarity of Local PC1 Scores across thhe ChrI Candidate Region",
 		x = "Chromosome I Position (Mb)", 
-		y = "Absolute Correlation with Whole Region PC1") +
+		y = "Correlation with Whole Region PC1") +
 	theme_classic(base_size = 14) +
 	theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 12.5),
 		axis.title = element_text( size = 13),
