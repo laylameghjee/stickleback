@@ -109,9 +109,7 @@ heatmap_zoom <- ggplot(sliding_zoom,
 #cobining both 
 
 final_plot <- gene_track / heatmap_zoom +
-        plot_layout (heights = c(1.3, 8)) +
-        plot_annotation( title = paste0("Standardised Sliding PCA Across the ChrI Candidate Region, 26.15 - 26.30Mb, \n with Genes of Interest"),
-                theme = theme( plot.title = element_text(hjust = 0.5, face = "bold", size = 14)))
+        plot_layout (heights = c(1.3, 8)) 
 
 #saving
 ggsave(

@@ -52,13 +52,10 @@ pca_plot <- ggplot(
 	size =2,
 	alpha = 0.4,
 	colour = "cadetblue2") +
-	labs ( 
-	title = " Basic PCA of ChrI Candidate Region, PC1 v PC2",
-	x = "PC1",
+	labs ( x = "PC1",
 	y = "PC2" ) +
 	theme_classic(base_size = 14) +
-	theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 15),
-		axis.title = element_text( size = 13),
+	theme( axis.title = element_text( size = 13),
 		axis.text = element_text( size = 11))
 
 #saving 

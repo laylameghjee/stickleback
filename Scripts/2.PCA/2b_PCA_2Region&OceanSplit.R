@@ -73,14 +73,11 @@ pca_plot <- ggplot(
 	"Freshwater" = "dodgerblue", 
         "Marine" = "cadetblue2")) +  
         facet_wrap ( ~Ocean, nrow =1) +       
-	labs(
-        title = "Basic PCA of ChrI Candidate Region, \n Separated by Ocean and Directional Regions, PC1 v PC2",
-        x = "PC1",
+	labs(x = "PC1",
         y = "PC2",
         colour = "Ocean Region") +
         theme_classic(base_size = 14) +
-        theme( plot.title = element_text (hjust = 0.5, face = "Bold", size = 12.5, lineheight = 1.1),
-                axis.title = element_text( size = 13),
+        theme(axis.title = element_text( size = 13),
                 axis.text = element_text( size = 11),
                 strip.text = element_text(size = 11, face = "bold"))
 

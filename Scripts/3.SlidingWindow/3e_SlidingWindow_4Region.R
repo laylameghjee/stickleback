@@ -81,13 +81,11 @@ heatmap <- ggplot(sliding_4,
 	facet_grid( Region ~ .,
 		scales = "free_y",
 		space = "free_y") +
-	labs ( title = "Sliding PCA across ChrI Candidate Region \n Separared by Ocean and Directional Regions",
-		x = "Chromosome I Position (Mb)",
+	labs ( x = "Chromosome I Position (Mb)",
 		y = "Individual",
 		fill = "Standardised PC1") +
 	theme_minimal() +
-	theme ( plot.title = element_text(hjust =0.5, face = "bold", size = 14),
-		panel.grid = element_blank(),
+	theme ( panel.grid = element_blank(),
 		axis.text.y = element_blank(),
 		axis.ticks.y = element_blank(),
 		strip.text.y = element_text(size=10),

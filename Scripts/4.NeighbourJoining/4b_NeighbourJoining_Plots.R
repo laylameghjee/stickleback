@@ -72,7 +72,6 @@ png (filename = file.path( outdir, "ChrI_NJ_ecotypetree.png"), width 4800, 4800,
 par( mar = c(1,1,4,1)) #graphical setting
 plot(nj_tree, type = "fan", show.tip.label = FALSE, edge.color = "grey75", edge.width = 0.5)
 tiplabels(pch = 16, col = tip_ecotype_colour, cex = 0.35)
-title( main = "Neighbour-Joining Tree of ChrI Candidate Region, \n Separated by Ecotype", font.main = 2, cex.main = 1.2)
 legend ("topright", legend = names(ecotype_colours), col = ecotype_colours, pch = 16, pt.cex = 1.2, bty = "n", title = "Ecotype", cex = 0.9)
 dev.off()
 
@@ -83,7 +82,6 @@ png (filename = file.path( outdir, "ChrI_NJ_4region.png"), width 4800, 4800, res
 par( mar = c(1,1,4,1)) #graphical setting
 plot(nj_tree, type = "fan", show.tip.label = FALSE, edge.color = "grey75", edge.width = 0.5)
 tiplabels(pch = 16, col = tip_ecotype_colour, cex = 0.35)
-title( main = "Neighbour-Joining Tree of ChrI Candidate Region, \n Separated by Geographic Region", font.main = 2, cex.main = 1.2)
 legend ("topright", legend = names(region_colours), col = region_colours, pch = 16, pt.cex = 1.2, bty = "n", title = "Region", cex = 0.9)
 dev.off()
 

@@ -165,6 +165,7 @@ dependencies:
   - r-lattice=0.22_9=r45h54b55ab_0
   - r-lifecycle=1.0.5=r45hc72bb7e_0
   - r-magrittr=2.0.5=r45h54b55ab_0
+  - r-maps=3.4.3=r45h54b55ab_1
   - r-mass=7.3_66=r45h54b55ab_0
   - r-matrix=1.7_5=r45h0e4624f_0
   - r-memoise=2.0.1=r45hc72bb7e_4
