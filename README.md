@@ -27,17 +27,18 @@ The repository is organised into analysis scripts, example outputs, adn the comp
 
 stickleback/  
 |    
-⋅⋅⋅⋅|- README.md  
-⋅⋅⋅⋅|- indproj.yml  
-⋅⋅⋅⋅|- Example_Plots/  
-⋅⋅⋅⋅|- Scripts/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- 1.DataPrep/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- 2.PCA/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- 3.SlidingWindow/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- 4.NeighbourJoining/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- 5.AdditionalAnalysis/  
-⋅⋅⋅⋅⋅⋅⋅⋅|- SNP_QC.sh  
-⋅⋅⋅⋅⋅⋅⋅⋅|- runR.sh  
+|- README.md  
+|- indproj.yml  
+|  
+|    |- Example_Plots/  
+|    |- Scripts/  
+|        |- 1.DataPrep/  
+|        |- 2.PCA/  
+|        |- 3.SlidingWindow/  
+|        |- 4.NeighbourJoining/  
+|        |- 5.AdditionalAnalysis/  
+|        |- SNP_QC.sh  
+|        |- runR.sh  
 
 
 
