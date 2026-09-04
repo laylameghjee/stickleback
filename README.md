@@ -2,7 +2,7 @@
 
 
 ## Project Overview 
-This project investigates population genetic structure across a 500KB chromosome I (ChrI) candidate inversion region in 906 globally distributed *Gasterosteus aculeatus* (threespine stickleback) individuals. The study examines how freshwater-marine ecological divergence, broad geographic history and fine scale genomic architecture contribute to patterns of genetic variation within this region.  
+This project investigates population genetic structure across a 500 KB chromosome I (ChrI) candidate inversion region in 906 globally distributed *Gasterosteus aculeatus* (threespine stickleback) individuals. The study examines how freshwater-marine ecological divergence, broad geographic history and fine scale genomic architecture contribute to patterns of genetic variation within this region.  
 
 Whole region principal component analysis (PCA) is used to characterise the dominant patterns of genetic differentiation to examine  their relationship with freshwater-marine ecotype and geographic population structure. Sliding window PCA is then used to determine how consistently whole region genetic structure is maintained across genomic position and to identify localised departures from the broader pattern. Ecological and geographic classifications are subsequently incorporated to investigate the distribution of this heterogeneity, while fine scale gene annotation is used to place the strongest local genomic departure within its genomic context.  
 
@@ -12,7 +12,7 @@ By integrating ecology, geography, and genomic position this project treats the 
 
 ## Research Aims
 
-The overall aim of this study is to characterise population genetic structure across a 500 KB ChrI candidate region containing the candidate inversion in globaly distributed *G. aculeatus*. Specifically, this project aims to:  
+The overall aim of this study is to characterise population genetic structure across a 500 KB ChrI candidate region containing the candidate inversion in globally distributed *G. aculeatus*. Specifically, this project aims to:  
   
 1. Characterise freshwater-marine ecological differentiation across the ChrI candidate region and determine how this varies across geographic population backgrounds. 
 2. Determine how consistently whole region structure is maintained across genomic position and whether localised departures occur.
@@ -46,11 +46,11 @@ stickleback/
 ## Data 
 
 ## Data Source & Availability  
-The genomic data analysed within this project were obtained from a preliminary dataset assembled as part of the RepAdapt Project. The dataset is identified as `rawg0214` and contains whole genome variant data and associated metadata from 906 globally distributed *G. aculeatus* populations.  
+The genomic data analysed within this project were obtained from a preliminary dataset assembled as part of the RepAdapt Project. The dataset is identified as `rawg0214` and contains whole genome variant data and associated metadata from 906 globally distributed *G. aculeatus* individuals.  
   
 The RepAdapt dataset was preliminary at the time of this project and combines data contributed by multiple independent studies and research groups. Some of the studies contributing samples had not yet been published at the time of analysis.  
   
-The complete genomic dataset is not redistributed through this repository because of both its large size and the inlusion of unpublished data. The repository instead contains the scripts, analysis workflow, and computational environment required to reproduce the analyses when authorised access to the original data is avaliable.  
+The complete genomic dataset is not redistributed through this repository because of both its large size and the inclusion of unpublished data. The repository instead contains the scripts, analysis workflow, and computational environment required to reproduce the analyses when authorised access to the original data is available.  
 
 More information on the RepAdapt Project [here](https://yeamanlab.weebly.com/repadapt.html)
   
@@ -66,11 +66,11 @@ The primary genomic input was a compressed VCF file containing whole genome vari
 
 ### Metadata
 
-The original sample metadata were supplied with the genomic data and was an Excel workbook, `rawg0214_Gasterosteus_aculeatus_metadata.xlsx` that was 264.45 KB in size. This metadata contained information describing sample identity, population assignment, geographical location, ecological classification, source study among others. Sample identifiers within the metadata were matched to individuals present within the genomic VCF so that ecological and geographic information could be incoorporated into downstream analyses.  
+The original sample metadata were supplied with the genomic data and was an Excel workbook, `rawg0214_Gasterosteus_aculeatus_metadata.xlsx` that was 264.45 KB in size. This metadata contained information describing sample identity, population assignment, geographical location, ecological classification, source study among others. Sample identifiers within the metadata were matched to individuals present within the genomic VCF so that ecological and geographic information could be incorporated into downstream analyses.  
 
 A processed metadata workbook containing the most used classifications in the analyses was generated as `inversion_meta.xlsx` and had a size of 53.20 KB. 
 
-Ecological metadata were simplified into three catagories for downstream analysis. Lake and stream samples were grouped into freshwater, and any without a classification were put into unknown. 
+Ecological metadata were simplified into three categories for downstream analysis. Lake and stream samples were grouped into freshwater, and any without a classification were put into unknown. 
 
 |Ecotype| Number of Individuals|
 |-------|----------------------|
@@ -102,7 +102,7 @@ All computational analyses were performed using scripted Bash and R workflows on
 
 ### Environment Installation
 
-To install the project environmnet follow these instructions:  
+To install the project environment follow these instructions:  
 
 1. Firstly clone the repository and move into it
 ```bash
@@ -131,13 +131,13 @@ To check the installation of particular packages and tools, and to also check th
 Whole genome VCF was indexed, restricted to ChrI and then subset to the 26.0 - 26.5 MB inversion candidate region.  
   
 2. **Variant Quality Assessment**  
-Sequencing depth, geontype quality, missingness, variant quality and allele frequency distributions were examined before downstream analysis.  
+Sequencing depth, genotype quality, missingness, variant quality and allele frequency distributions were examined before downstream analysis.  
   
 3. **Whole Region PCA**  
 PCA was performed across the complete candidate region to characterise overall genetic structure and examine freshwater-marine and geographic differentiation.  
   
 4. **Sliding Window PCA**  
-The candidate Region was dicided into overlapping 25KB windows advancing in 10KB steps. PCA was performed independently within each window and PC1 scores were polarised to a common orientation.  
+The candidate Region was divided into overlapping 25KB windows advancing in 10KB steps. PCA was performed independently within each window and PC1 scores were polarised to a common orientation.  
   
 5. **Local Genomic Structure**  
 Window specific PC1 scores were compared with whole region PC1 using Pearson correlation to identify localised departures from the broader genomic pattern. Ecological and geographic patterns within these departures were then examined.  
@@ -149,13 +149,16 @@ Gene annotation was incorporated around the focal 26.2 MB interval to place the 
 Pairwise genetic distances across the candidate region were used to generate an independent representation of relationships among the 906 individuals.  
 
 ## Outputs  
-The workflow produces both analytical data files and graphical outputs used within the study. Example figures generated by the workflow are provided in `Example_Plots/`. Key intermediate and final data files include but are not limited too:  
+The workflow produces both analytical data files and graphical outputs used within the study. Example figures generated by the workflow are provided in `Example_Plots/`. Key intermediate and final data files included but are not limited too:  
 
 |Output| Description |
 |------|-------------|
 |`basic_PCA_scores.txt`| Whole region PCA scores for all 906 individuals|
 |`slidingpc1_polarised.txt`| Polarised and standardised PC1 scores across sliding windows|
 |`ChrI_genetic_distance.rds`| Pairwise genetic distance object for neighbour-joining|
+
+## Reproducibility Notes  
+Analyses were performed within the supplied `indproj` Conda environment. The original genomic data and metadata are not redistributed due to their size and inclusion of unpublished data. File paths within scripts may  therefore need to be modified when reproducing the workflow outside of the UON HPC environment.  
 
 ## Acknowledgements  
 
