@@ -23,8 +23,9 @@ Together these objectives are designed to determine whether population structure
 
 ## Repository Structure 
 
-The repository is organised into analysis scripts, example outputs, adn the computational environment used for the projct. Scripts are grouped according to the main stages of the analysis workflow.  
+The repository is organised into analysis scripts, example outputs, and the computational environment used for the project. Scripts are grouped according to the main stages of the analysis workflow.  
 
+```
 stickleback/  
 |    
 |- README.md  
@@ -40,7 +41,7 @@ stickleback/
 |        |- SNP_QC.sh  
 |        |- runR.sh  
 
-
+```
 
 ## Data 
 
