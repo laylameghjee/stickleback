@@ -31,8 +31,9 @@ stickleback/
 |- README.md  
 |- indproj.yml  
 |  
-|    |- Example_Plots/  
-|    |- Scripts/  
+||- Example_Plots/  
+|
+||- Scripts/  
 |        |- 1.DataPrep/  
 |        |- 2.PCA/  
 |        |- 3.SlidingWindow/  
@@ -45,10 +46,50 @@ stickleback/
 
 ## Data 
 
+## Data Source & Availability  
+The genomic data analysed within this project were obtained from a preliminary dataset assembled as part of the RepAdapt Project. The dataset is identified as `rawg0214` and contains whole genome variant data and associated metadata from 906 globally distributed *G. aculeatus* populations.  
+  
+The RepAdapt dataset was preliminary at the time of this project and combines data contributed by multiple independent studies and research groups. Some of the studies contributing samples had not yet been published at the time of analysis.  
+  
+The complete genomic dataset is not redistributed through this repository because of both its large size and the inlusion of unpublished data. The repository instead contains the scripts, analysis workflow, and computational environment required to reproduce the analyses when authorised access to the original data is avaliable.  
+  
 ### Genomic Data
-### Metadata 
-### Genome Annotation
-### Data Avalability  
+The primary genomic input was a compressed VCF file containing whole genome variant calls for 906 *G. aculeatus* individuals. All genomic coordinates used throughout this project refer to the V5 *G. aculeatus* reference assembly. The genomic dataset was progressively reduced from the complete whole genome dataset to a ChrI subset, and then to the 500 kb candidate inversion region analysed within this project.  
+
+| Analysis Stage   | File                                                   | Description               | Format        |Variant Records | File Size |
+|------------------|--------------------------------------------------------|---------------------------|---------------|----------------|-----------|
+|Whole genome input|`rawg0214_Gasterosteus_aculeatus_TobiasPatterson.vcf.gz`| Preliminary genome dataset| compressed VCF|108,406,458     | 278.11 GB |
+|ChrI SNP subset |`trimmed_chrI.snps.vcf.gz` |SNPs retained after trimming to ChrI| compressed VCF| 7,054,553| 18.78 GB|
+|Candidate Region SNP subset| `core_inversion.snps.vcf.gz`|SNPS within the ChrI 26.0-26.5 Mb region|compressed VCF| 124,287| 335.73 MB |
+
+
+### Metadata
+
+The original sample metadata were supplied with the genomic data and was an Excel workbook, `rawg0214_Gasterosteus_aculeatus_metadata.xlsx` that was 264.45 KB in size. This metadata contained information describing sample identity, population assignment, geographical location, ecological classification, source study among others. Sample identifiers within the metadata were matched to individuals present within the genomic VCF so that ecological and geographic information could be incoorporated into downstream analyses.  
+
+A processed metadata workbook containing the most used classifications in the analyses was generated as `inversion_meta.xlsx` and had a size of 53.20 KB. 
+
+Ecological metadata were simplified into three catagories for downstream analysis. Lake and stream samples were grouped into freshwater, and any without a classification were put into unknown. 
+
+|Ecotype| Number of Individuals|
+|-------|----------------------|
+|Freshwater| 438|
+|Marine| 387|
+|Unknown| 81|
+
+  
+Sampling longitude was used to assign individuals consistently to four broad geographic areas. 
+
+|Geographic Area| Individuals|
+|---------------|------------|
+|East Atlantic| 344|
+|West Atlantic| 168|
+|East Pacific| 345|
+|West Pacific| 49|
+
+
+### Reference Genome & Genome Annotation
+ 
 
 
 ## Computational Environment 
